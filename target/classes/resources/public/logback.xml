@@ -1,0 +1,5 @@
+<configuration>
+    <property name="LOG_PATTERN" value="%date{HH:mm:ss.SSS} [%thread] %-5level
+%logger{36} - %msg%n"/>
+    <property name="FILE_PATH" value="D:/logs/course03/demo.%d{yyyy-MM-dd}.%i.log"/>
+</configuration>

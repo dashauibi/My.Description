@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>企业发帖</title>
+    <link rel="stylesheet" th:href="  @{../static/layui/css/layui.css}">
+</head>
+<div class="layui-container">
+    <div class="layui-row">
+        <div class="layui-col-lg12">
+            <fieldset class="layui-elem-field">
+                <legend>发帖</legend>
+                <div class="layui-field-box">
+                    <form class="layui-form" method="post" action="/corporation/accept">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">职位</label>
+                            <div class="layui-input-block">
+                                <input type="text" id="station" required lay-verify="required" autocomplete="off"
+                                       class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">招聘人数</label>
+                            <div class="layui-input-block">
+                                <input type="number" id="vacancy" required lay-verify="required" autocomplete="off"
+                                       class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">联系电话</label>
+                            <div class="layui-input-block">
+                                <input type="text" id="tel" required lay-verify="required" autocomplete="off"
+                                       class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">学历</label>
+                            <div class="layui-input-block">
+                                <input type="text" id="education" required lay-verify="required" autocomplete="off"
+                                       class="layui-input">
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">工作经验</label>
+                                <div class="layui-input-block">
+                                    <input type="text" id="experience" required lay-verify="required" autocomplete="off"
+                                           class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">类型</label>
+                                <div class="layui-input-block">
+                                    <!--                                <input type="text" name="text" required lay-verify="required" autocomplete="off" class="layui-input">-->
+                                    <select id="type" class="layui-select">
+                                        <option value="1">UX/UI 设计师</option>
+                                        <option value="2">Web 开发</option>
+                                        <option value="3">游戏</option>
+                                        <option value="4">IT</option>
+                                        <option value="5">SEO</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">关于公司</label>
+                                <div class="layui-input-block">
+                                    <!--                                <input type="text"  required lay-verify="required" autocomplete="off" class="layui-input">-->
+                                    <textarea id="contentTwo" class="layui-textarea" rows="5"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">成立日期</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" id="creatTime" lay-verify="date" placeholder="yyyy-MM-dd"
+                                           autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">邮箱</label>
+                                <div class="layui-input-block">
+                                    <input type="text" id="email" required lay-verify="required" autocomplete="off"
+                                           class="layui-input">
+                                </div>
+                            </div>
+
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">官网</label>
+                                <div class="layui-input-block">
+                                    <input type="text" id="web" required lay-verify="required" autocomplete="off"
+                                           class="layui-input">
+                                </div>
+                            </div>
+
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">地址</label>
+                                <div class="layui-input-block">
+                                    <select id="choice">
+                                        <option value="1">Default</option>
+                                        <option value="2">温江区</option>
+                                        <option value="3">金牛区</option>
+                                        <option value="4">锦江区</option>
+                                        <option value="5">高新区</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="layui-form-item">
+                                <div class="layui-input-block">
+                                    <button class="layui-btn" type="button" id="send" lay-submit lay-filter="formDemo">
+                                        立即提交
+                                    </button>
+                                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                                </div>
+                            </div>
+                    </form>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" th:src="@{../static/js/jquery.min.js}"></script>
+<script type="text/javascript" th:src="@{../static/layui/layui.js}"></script>
+<script type="text/javascript" th:src="@{../static/js/dw_form_submit2.js}"></script>
+<script>
+    layui.use('laydate', function () {
+        var laydate = layui.laydate;
+
+        //日期
+        laydate.render({
+            elem: '#date'
+        });
+
+    })
+</script>
+
+
+</body>
+
+</html>
